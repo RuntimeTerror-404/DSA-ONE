@@ -3,11 +3,11 @@ using namespace std;
 
 void solution(vector<int> &nums, int sum)
 {
-    int curr_sum = 0;
-    int start = 0;
-    int end = -1;
+    int n = nums.size();
     unordered_map<int, int> ans;
-    for (int i = 0; i < nums.size(); i++)
+    int start, end;
+    int curr_sum = 0;
+    for (int i = 0; i < n; i++)
     {
         curr_sum += nums[i];
         if (curr_sum == sum)
@@ -24,20 +24,12 @@ void solution(vector<int> &nums, int sum)
         }
         ans[curr_sum] = i;
     }
-    cout << start << " , " << end;
+    cout << start << " , " << end << endl;
 }
 
 int main()
 {
-    vector<int> nums = {1, 4, 20, 3, 10, 5};
-    int sum = 33;
-    /*
-    [1] = 0
-    [5] = 1
-    [25] = 2
-    [28] = 3
-    [38] = 4
-    [43] = 5
-    */
+    vector<int> nums = {10, 15, -5, 15, -10, 5};
+    int sum = 5;
     solution(nums, sum);
 }
